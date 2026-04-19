@@ -17,5 +17,6 @@ schema:
 #image: "ghcr.io/cable89/stromkalkulator-historisk"
 startup: services
 ports:
-  8000/tcp: 8099
+  8099/tcp: 8099
 ingress: true
+panel_icon: mdi:hydro-power
