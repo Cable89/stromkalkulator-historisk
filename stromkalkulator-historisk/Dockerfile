@@ -26,8 +26,21 @@ WORKDIR /data
 # Copy root filesystem
 COPY rootfs /
 
+#Add nginx and create the run folder for nginx.
+RUN \
+  apk --no-cache add \
+    nginx \
+  \
+  && mkdir -p /run/nginx
+
+#Copy our conf into the nginx http.d folder.
+COPY ingress.conf /etc/nginx/http.d/
+
+#Launch nginx with debug options.
+CMD [ "nginx","-g","daemon off;error_log /dev/stdout debug;" ]
+
 LABEL \
-    org.opencontainers.image.title="Home Assistant App: Example app" \
-    org.opencontainers.image.description="Example app to use as a blueprint for new apps." \
-    org.opencontainers.image.source="https://github.com/home-assistant/apps-example" \
+    org.opencontainers.image.title="Home Assistant App: Strømkalkulator Historisk" \
+    org.opencontainers.image.description="Populate historical data for Strømkalkulator" \
+    org.opencontainers.image.source="https://github.com/Cable89/stromkalkulator-historisk" \
     org.opencontainers.image.licenses="Apache License 2.0"

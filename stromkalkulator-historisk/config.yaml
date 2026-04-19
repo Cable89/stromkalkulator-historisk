@@ -11,10 +11,11 @@ init: false
 map:
   - share:rw
 options:
-  language: "en"
+  message: "Wololo!"
 schema:
   message: "str?"
 #image: "ghcr.io/cable89/stromkalkulator-historisk"
 startup: services
 ports:
   8000/tcp: 8000
+ingress: true
