@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "Wololo!" > /share/example_app_output.txt

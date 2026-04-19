@@ -17,6 +17,12 @@ RUN \
     && curl -sSLf -o /usr/bin/tempio \
         "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${tempio_arch}"
 
+RUN \
+    apk add --no-cache \
+        python3
+
+WORKDIR /data
+
 # Copy root filesystem
 COPY rootfs /
 
