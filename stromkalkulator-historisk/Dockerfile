@@ -15,23 +15,15 @@ RUN \
         *) echo "Unsupported TARGETARCH: ${TARGETARCH}" && exit 1 ;; \
     esac \
     && curl -sSLf -o /usr/bin/tempio \
-        "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${tempio_arch}"
+        "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${tempio_arch}" \
+    && apk add --no-cache \
+        python3 \
+        nginx \
+    && mkdir -p /run/nginx
 
-RUN \
-    apk add --no-cache \
-        python3
-
-WORKDIR /data
 
 # Copy root filesystem
 COPY rootfs /
-
-#Add nginx and create the run folder for nginx.
-RUN \
-  apk --no-cache add \
-    nginx \
-  \
-  && mkdir -p /run/nginx
 
 #Copy our conf into the nginx http.d folder.
 COPY ingress.conf /etc/nginx/http.d/
