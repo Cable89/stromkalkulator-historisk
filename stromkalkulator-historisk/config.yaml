@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/apps/configuration#app-configuration
 name: Strømkalkulator historisk
-version: "0.1.0"
+version: "0.1.1"
 slug: stromkalkulator-historisk
 description: Example app
 url: "https://github.com/Cable89/stromkalkulator-historisk"
@@ -17,5 +17,5 @@ schema:
 #image: "ghcr.io/cable89/stromkalkulator-historisk"
 startup: services
 ports:
-  8000/tcp: 8000
+  8000/tcp: 8099
 ingress: true
