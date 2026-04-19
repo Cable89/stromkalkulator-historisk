@@ -31,7 +31,7 @@ jobs:
 
       - name: Find app directories
         id: apps
-        uses: home-assistant/actions/helpers/find-addons@master
+        uses: cable89/actions/helpers/find-addons@master
 
       - name: Filter changed apps
         id: filter

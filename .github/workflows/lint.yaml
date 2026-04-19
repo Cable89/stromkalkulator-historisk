@@ -22,7 +22,7 @@ jobs:
 
       - name: 🔍 Find app directories
         id: addons
-        uses: home-assistant/actions/helpers/find-addons@master
+        uses: cable89/actions/helpers/find-addons@master
 
   lint:
     name: Lint app ${{ matrix.path }}

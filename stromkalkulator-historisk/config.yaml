@@ -14,7 +14,7 @@ options:
   language: "en"
 schema:
   message: "str?"
-image: "ghcr.io/home-assistant/app-example"
+#image: "ghcr.io/cable89/stromkalkulator-historisk"
 startup: services
 ports:
   8000/tcp: 8000
